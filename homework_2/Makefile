@@ -41,4 +41,4 @@ clean:
 	
 # Packages directory files into .zip file
 package:
-	zip -r Ethan-Eye-HW2.zip Coordinator.c Checker.c Checker.h Makefile README.txt
+	zip -r Ethan-Eye-HW2.zip Coordinator.c Checker.c Checker.h Makefile README.md

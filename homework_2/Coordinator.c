@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
             printf("Coordinator: invalid arguments\n");
             return 1;
         }
-        char *args[] = {"checker", argv[1], argv[i], NULL};
+   
         // create a child process
         pid_t pid = fork();
 
