@@ -10,6 +10,6 @@
 int main(int argc, char *argv[])
 {
 
-printf("Process %d\n :running checker", getpid());
-
+printf("Running checker %d\n", getpid());
+return 0;
 }
