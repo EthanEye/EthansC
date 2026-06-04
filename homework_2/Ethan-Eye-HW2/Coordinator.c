@@ -11,7 +11,7 @@
 
 int main(int argc, char *argv[])
 {
-    if (argc != 6)
+    if (atoi(argv[1]) < 0 || argc < 2)
     {
         printf("Coordinator: invalid arguments\n");
         return 1;
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
             printf("Coordinator: invalid arguments\n");
             return 1;
         }
-
+   
         // create a child process
         pid_t pid = fork();
 
@@ -36,14 +36,15 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("Coordinator: forked process with ID %d.\n", pid);
-            printf("Coordinator: waiting for process [%d].\n", pid);
+            printf("Coordinator: forked process with ID %d\n", pid);
+            printf("Coordinator: waiting for child process\n");
             int status;
             wait(&status);
-            printf("Coordinator: child process %d returned %d.\n", pid, WEXITSTATUS(status));
-          
+            int exitCode = WEXITSTATUS(status);
+            printf("Coordinator: child process %d returned %d\n", pid, exitCode);
+            printf("\n");
         }
     }
-    printf("Coordinator: exiting.\n");
+
     return 0;
 }

@@ -8,14 +8,18 @@
 int main(int argc, char *argv[])
 {
 
-    printf("Checker: running checker %d\n", getpid());
-    printf("Checker: dividend =  %s\n", argv[2]);
-    printf("Checker: divisor = %s\n", argv[1]);
+    printf("Checker process [%d]: Starting.\n", getpid());
 
     if (atoi(argv[2]) % atoi(argv[1]) == 0)
     {
-        return 0;
+        printf("Checker process [%d]: %d *IS* divisible by %d.\n", getpid(), atoi(argv[2]), atoi(argv[1]));
+        printf("Checker process [%d]: Returning 0.\n", getpid());
+        return 1;
     }
-
-    return 1;
+    else
+    {
+        printf("Checker process [%d]: %d *IS NOT* divisible by %d.\n", getpid(), atoi(argv[2]), atoi(argv[1]));
+    }   
+    printf("Checker process [%d]: Returning 1.\n", getpid());
+    return 0;
 }
