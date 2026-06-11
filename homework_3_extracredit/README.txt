@@ -3,6 +3,11 @@
 # Ethan Eye
 
 
+## Compile
+
+gcc -Wall -o coordinator Coordinator.c
+gcc -Wall -o checker Checker.c
+
 ## Command
 
  > ./coordinator 3 8 15 21 20
