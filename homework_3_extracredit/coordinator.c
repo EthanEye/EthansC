@@ -18,14 +18,6 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  // create shared memory segment (its seperate from all processes)
-  int sharedMemId =
-      shmget(IPC_PRIVATE, (argc - 2) * sizeof(int), IPC_CREAT | 0666);
-  if (sharedMemId < 0) {
-    perror("shmget");
-    return 1;
-  }
-
   // parent needs to write shared memory to a pipe
   // and pass a reference to the read end of the pipe and then call execlp
 
